@@ -1,0 +1,42 @@
+{
+  "name": "melee-bundle",
+  "version": "0.0.0",
+  "description": "Bundle for SSBM stream overlay",
+  "homepage": "https://github.com/dbanco/melee-nodecg.git",
+  "author": {
+    "name": "Daniel Banco",
+    "email": "dpqb10@gmail.com",
+    "url": "https://github.com/dbanco"
+  },
+  "files": [
+    "dashboard",
+    "graphics",
+    "extension.js",
+    "extension"
+  ],
+  "keywords": [
+    "Melee",
+    "nodecg-bundle"
+  ],
+  "nodecg": {
+    "compatibleRange": "1.3.0",
+    "dashboardPanels": [
+      {
+        "name": "players",
+        "title": "Players",
+        "file": "players.html",
+		"width":4,
+        "headerColor": "#3E8EDE"
+      }
+    ],
+    "graphics": [
+      {
+        "file": "players.html",
+        "width": 1920,
+        "height": 1080
+      }
+    ]
+  },
+  "repository": "https://github.com/nodecg/nodecg.git",
+  "license": "Apache-2.0"
+}

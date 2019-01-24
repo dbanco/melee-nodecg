@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<body>
+	<label>Left Player:</label>
+	<input id="nameInput1" type="text"></input>
+	<br>
+	<label>Right Player:</label>
+	<input id="nameInput2" type="text"></input>
+	<br>
+	<button id="submitButton">Submit</button>
+</body>
+
+<script>
+	const nameInput1 = document.querySelector('#nameInput1');
+	const nameInput2 = document.querySelector('#nameInput2');
+	
+	const submitButton = document.querySelector('#submitButton');
+	const nameReplicant1 = nodecg.Replicant('name1');
+	nameReplicant1.on('change', (newValue, oldValue) => {
+		// The value of the Replicant has changed somewhere in NodeCG,
+		// this could be another dashboard panel, a server initiated change,
+		// or the doing of another user accessing your dashboard panel.
+		nameInput1.value = newValue;
+	});
+	
+	const nameReplicant2 = nodecg.Replicant('name2');
+	nameReplicant2.on('change', (newValue, oldValue) => {
+		// The value of the Replicant has changed somewhere in NodeCG,
+		// this could be another dashboard panel, a server initiated change,
+		// or the doing of another user accessing your dashboard panel.
+		nameInput2.value = newValue;
+	});
+	
+	submitButton.onclick = () => {
+		// A Replicant can be modified by modifying its `value`.
+		nameReplicant1.value = nameInput1.value;
+		nameReplicant2.value = nameInput2.value;
+	};
+</script>
+
+
+
+</html>

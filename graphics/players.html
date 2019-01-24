@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		@font-face {
+			font-family: boysen;
+			src:url('boysen_font\Webfonts\Boysen.woff');
+		}
+			
+		#message1 {
+			font-size: 2em;
+			font-family: boysen;
+		}
+		
+		#message2 {
+			font-size: 2em;
+			font-family: boysen;
+		}
+		
+		.container {
+		position: relative;
+		text-align: center;
+		color: white;
+		}
+		
+		.player-left {
+		position: absolute;
+		top: 15px;
+		left: 40px;
+		}
+		
+		.player-right {
+		position: absolute;
+		top:15px;
+		right: 40px;
+		}
+	</style>
+	
+	<link href="css/players.css" rel="stylesheet"/>
+	<link href="img/flags/flags.css" rel="stylesheet"/>
+	<link href="img/heads/heads.css" rel="stylesheet"/>
+
+	<script src="components/jquery/dist/jquery.min.js"></script>
+	<script src="js/players.js"></script>
+</head>
+
+<body>
+<div class="container">
+	<img src="img/tufts_stream_overlay.png" style="width:100%;">
+	<div class="player-left" id="message1"</div>
+	<div class="player-right" id="message2"</div>
+</div>
+</body>
+
+<script>
+	// We can access Replicants from other bundles by specifying the bundle name as a second parameter.
+	// NodeCG requires that bundle names match their directory names, but you can always check the `package.json` to double check.
+	const nameReplicant1 = nodecg.Replicant('name1');
+	// Change will be called when the Replicant loads too, so we can use it to set the initial value.
+	nameReplicant1.on('change', (newValue, oldValue) => {
+		message1.innerText = `${newValue}`;
+	});
+	const nameReplicant2 = nodecg.Replicant('name2');
+	// Change will be called when the Replicant loads too, so we can use it to set the initial value.
+	nameReplicant2.on('change', (newValue, oldValue) => {
+		message2.innerText = `${newValue}`;
+	});
+</script>
+</html>
