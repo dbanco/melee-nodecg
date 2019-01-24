@@ -1,19 +1,90 @@
 <!DOCTYPE html>
 <html>
+	<head>
+		<script src="js/characters.js"></script>
+	</head>
+
 <body>
+	<datalist id="characters">
+		<option value="None">
+		<option value="Fox">
+		<option value="Falco">
+		<option value="Marth">
+		<option value="Sheik">
+		<option value="Jigglypuff">
+		<option value="Peach">
+		<option value="Ice Climbers">
+		<option value="Captain Falcon">
+		<option value="Pikachu">
+		<option value="Samus">
+		<option value="Dr. Mario">
+		<option value="Yoshi">
+		<option value="Luigi">
+		<option value="Ganondorf">
+		<option value="Mario">
+		<option value="Young Link">
+		<option value="Donkey Kong">
+		<option value="Link">
+		<option value="Mr. Game &amp; Watch">
+		<option value="Roy">
+		<option value="Mewtwo">
+		<option value="Zelda">
+		<option value="Ness">
+		<option value="Pichu">
+		<option value="Bowser">
+		<option value="Kirby">
+	</datalist>
+
 	<label>Left Player:</label>
 	<input id="nameInput1" type="text"></input>
+	<label>Games Won:</label>
+	<input id="scoreInput1" type="text" maxlength=2 size=2></input>
+	<label>Character:</label>
+	<input id="charInput1"  list="characters" autocomplete="on" class="character-select" value="Fox"></input>
+	<label>Port:</label>
+	<input id="portInput1" type="text" maxlength=1 size=1 value="1"></input>
 	<br>
 	<label>Right Player:</label>
 	<input id="nameInput2" type="text"></input>
+	<label>Games Won:</label>
+	<input id="scoreInput2" type="text" maxlength=2 size=2></input>
+	<label>Character:</label>
+	<input id="charInput2"  list="characters" autocomplete="on" class="character-select" value="Fox"></input>
+	<label>Port:</label>
+	<input id="portInput2" type="text" maxlength=1 size=1 value="2"></input>
+	<br>
+	<br>
+	<label>Event Name:</label>
+	<input id="titleInput1" type="text"></input>
+	<br>
+	<label>Stage of Bracket:</label>
+	<input id="titleInput2" type="text"></input>
+	<br>
+	<label>Date:</label>
+	<input id="titleInput3" type="text"></input>
 	<br>
 	<button id="submitButton">Submit</button>
 </body>
 
 <script>
+	
+	function getCharacter(name) {
+			if (characters[name]) return characters[name];
+			return "none";
+	}
+
 	const nameInput1 = document.querySelector('#nameInput1');
 	const nameInput2 = document.querySelector('#nameInput2');
-	
+	const titleInput1 = document.querySelector('#titleInput1');
+	const titleInput2 = document.querySelector('#titleInput2');
+	const titleInput3 = document.querySelector('#titleInput3');
+	const scoreInput1 = document.querySelector('#scoreInput1');
+	const scoreInput2 = document.querySelector('#scoreInput2');
+	const charInput1 = document.querySelector('#charInput1');
+	const charInput2 = document.querySelector('#charInput2');
+	const portInput1 = document.querySelector('#portInput1');
+	const portInput2 = document.querySelector('#portInput2');
+
 	const submitButton = document.querySelector('#submitButton');
 	const nameReplicant1 = nodecg.Replicant('name1');
 	nameReplicant1.on('change', (newValue, oldValue) => {
@@ -30,11 +101,91 @@
 		// or the doing of another user accessing your dashboard panel.
 		nameInput2.value = newValue;
 	});
-	
+
+	const nameReplicant3 = nodecg.Replicant('title1');
+	nameReplicant3.on('change', (newValue, oldValue) => {
+		// The value of the Replicant has changed somewhere in NodeCG,
+		// this could be another dashboard panel, a server initiated change,
+		// or the doing of another user accessing your dashboard panel.
+		titleInput1.value = newValue;
+	});
+
+	const nameReplicant4 = nodecg.Replicant('title2');
+	nameReplicant4.on('change', (newValue, oldValue) => {
+		// The value of the Replicant has changed somewhere in NodeCG,
+		// this could be another dashboard panel, a server initiated change,
+		// or the doing of another user accessing your dashboard panel.
+		titleInput2.value = newValue;
+	});
+
+	const nameReplicant5 = nodecg.Replicant('title3');
+	nameReplicant5.on('change', (newValue, oldValue) => {
+		// The value of the Replicant has changed somewhere in NodeCG,
+		// this could be another dashboard panel, a server initiated change,
+		// or the doing of another user accessing your dashboard panel.
+		titleInput3.value = newValue;
+	});
+
+	const nameReplicant6 = nodecg.Replicant('score1');
+	nameReplicant6.on('change', (newValue, oldValue) => {
+		// The value of the Replicant has changed somewhere in NodeCG,
+		// this could be another dashboard panel, a server initiated change,
+		// or the doing of another user accessing your dashboard panel.
+		scoreInput1.value = newValue;
+	});
+
+	const nameReplicant7 = nodecg.Replicant('score2');
+	nameReplicant7.on('change', (newValue, oldValue) => {
+		// The value of the Replicant has changed somewhere in NodeCG,
+		// this could be another dashboard panel, a server initiated change,
+		// or the doing of another user accessing your dashboard panel.
+		scoreInput2.value = newValue;
+	});
+
+	const nameReplicant8 = nodecg.Replicant('char1');
+	nameReplicant8.on('change', (newValue, oldValue) => {
+		// The value of the Replicant has changed somewhere in NodeCG,
+		// this could be another dashboard panel, a server initiated change,
+		// or the doing of another user accessing your dashboard panel.
+	});
+
+	const nameReplicant9 = nodecg.Replicant('char2');
+	nameReplicant9.on('change', (newValue, oldValue) => {
+		// The value of the Replicant has changed somewhere in NodeCG,
+		// this could be another dashboard panel, a server initiated change,
+		// or the doing of another user accessing your dashboard panel.
+	});
+
+	const nameReplicant10 = nodecg.Replicant('port1');
+	nameReplicant10.on('change', (newValue, oldValue) => {
+		// The value of the Replicant has changed somewhere in NodeCG,
+		// this could be another dashboard panel, a server initiated change,
+		// or the doing of another user accessing your dashboard panel.
+		portInput1.value = newValue;
+	});
+
+	const nameReplicant11 = nodecg.Replicant('port2');
+	nameReplicant11.on('change', (newValue, oldValue) => {
+		// The value of the Replicant has changed somewhere in NodeCG,
+		// this could be another dashboard panel, a server initiated change,
+		// or the doing of another user accessing your dashboard panel.
+		portInput2.value = newValue;
+	});
+
+
 	submitButton.onclick = () => {
 		// A Replicant can be modified by modifying its `value`.
 		nameReplicant1.value = nameInput1.value;
 		nameReplicant2.value = nameInput2.value;
+		nameReplicant3.value = titleInput1.value;
+		nameReplicant4.value = titleInput2.value;
+		nameReplicant5.value = titleInput3.value;
+		nameReplicant6.value = scoreInput1.value;
+		nameReplicant7.value = scoreInput2.value;
+		nameReplicant8.value = getCharacter(charInput1.value);
+		nameReplicant9.value = getCharacter(charInput2.value);
+		nameReplicant10.value = portInput1.value;
+		nameReplicant11.value = portInput2.value;
 	};
 </script>
 

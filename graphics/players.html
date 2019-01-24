@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<script src="js/characters.js"></script>
+	<link href="img/heads/heads.css" rel="stylesheet">
+
 	<style>
 		@font-face {
 			font-family: 'Proto';
@@ -19,7 +22,54 @@
 			font-size: 28px;
 			font-family: 'Proto';
 		}
+
+		#message3 {
+			font-size: 28px;
+			font-family: 'Proto';
+		}
+
+		#message4 {
+			font-size: 28px;
+			font-family: 'Proto';
+		}	
 		
+		#message5 {
+			font-size: 28px;
+			font-family: 'Proto';
+		}	
+		
+		#message6 {
+			font-size: 36px;
+			font-family: 'Proto';
+		}	
+
+		#message7 {
+			font-size: 36px;
+			font-family: 'Proto';
+		}	
+
+		#message8 {
+		position: absolute;
+		top:64px; 
+		left:30px;
+		}
+
+		#message9 {
+		position: absolute;
+		top:64px; 
+		right:30px;
+		}
+
+		#message10 {
+			font-size: 28px;
+			font-family: 'Proto';
+		}	
+
+		#message11 {
+			font-size: 28px;
+			font-family: 'Proto';
+		}	
+
 		.container {
 		position: relative;
 		text-align: center;
@@ -37,36 +87,150 @@
 		top:17px;
 		left: 1335px;
 		}
-	</style>
-	
-	<link href="css/players.css" rel="stylesheet"/>
-	<link href="img/flags/flags.css" rel="stylesheet"/>
-	<link href="img/heads/heads.css" rel="stylesheet"/>
 
-	<script src="components/jquery/dist/jquery.min.js"></script>
-	<script src="js/players.js"></script>
+		.score-left {
+		position: absolute;
+		top: 55px;
+		left: 240px;
+		}
+		
+		.score-right {
+		position: absolute;
+		top:55px;
+		left: 1338px;
+		}
+
+		.title-left {
+		position: absolute;
+		top:17px;
+		left: 300px;
+		}
+
+		.title-center {
+		position: fixed;
+		top:17px;
+		left:50%;
+		transform: translate(-25%,0);
+		margin: 0 auto;
+		left:730px;
+		}
+
+		.title-right {
+		position: absolute;
+		top:17px;
+		right:300px;
+		}
+
+		.port-left {
+		position: absolute;
+		top:56px; 
+		left:100px;
+		}
+
+		.port-right {
+		position: absolute;
+		top:56px; 
+		right:100px;
+		}
+
+	</style>
 </head>
 
 <body>
 <div class="container">
-	<img src="img/tufts_stream_overlay.png" style="width:100%;">
+	<img src="img/tufts_stream_overlay.png" style="width:100% z-index=-1">
 	<div class="player-left" id="message1" ></div>
 	<div class="player-right" id="message2" ></div>
+	<div class="title-left" id="message3" ></div>
+	<div class="title-center" id="message4" ></div>
+	<div class="title-right" id="message5" ></div>
+	<div class="score-left" id="message6" ></div>
+	<div class="score-right" id="message7" ></div>
+	<div class="port-left" id="message10" ></div>
+	<div class="port-right" id="message11" ></div>
+	<div class="head head-fox" id="message8"></div>
+	<div class="head head-falco" id="message9"></div>
 </div>
 </body>
 
 <script>
 	// We can access Replicants from other bundles by specifying the bundle name as a second parameter.
 	// NodeCG requires that bundle names match their directory names, but you can always check the `package.json` to double check.
+	
+	src="characters.js"
+
+	function getCharacter(name) {
+			if (characters[name]) return characters[name];
+			return "none";
+	}
+
 	const nameReplicant1 = nodecg.Replicant('name1');
 	// Change will be called when the Replicant loads too, so we can use it to set the initial value.
 	nameReplicant1.on('change', (newValue, oldValue) => {
 		message1.innerText = `${newValue}`;
 	});
+	
 	const nameReplicant2 = nodecg.Replicant('name2');
 	// Change will be called when the Replicant loads too, so we can use it to set the initial value.
 	nameReplicant2.on('change', (newValue, oldValue) => {
 		message2.innerText = `${newValue}`;
+	});
+
+	const nameReplicant3 = nodecg.Replicant('title1');
+	// Change will be called when the Replicant loads too, so we can use it to set the initial value.
+	nameReplicant3.on('change', (newValue, oldValue) => {
+		message3.innerText = `${newValue}`;
+	});
+
+	const nameReplicant4 = nodecg.Replicant('title2');
+	// Change will be called when the Replicant loads too, so we can use it to set the initial value.
+	nameReplicant4.on('change', (newValue, oldValue) => {
+		message4.innerText = `${newValue}`;
+	});
+
+	const nameReplicant5 = nodecg.Replicant('title3');
+	// Change will be called when the Replicant loads too, so we can use it to set the initial value.
+	nameReplicant5.on('change', (newValue, oldValue) => {
+		message5.innerText = `${newValue}`;
+	});
+
+	const nameReplicant6 = nodecg.Replicant('score1');
+	// Change will be called when the Replicant loads too, so we can use it to set the initial value.
+	nameReplicant6.on('change', (newValue, oldValue) => {
+		message6.innerText = `${newValue}`;
+	});
+
+	const nameReplicant7 = nodecg.Replicant('score2');
+	// Change will be called when the Replicant loads too, so we can use it to set the initial value.
+	nameReplicant7.on('change', (newValue, oldValue) => {
+		message7.innerText = `${newValue}`;
+	});
+
+	const nameReplicant8 = nodecg.Replicant('char1');
+	var headstr = "head-";
+	// Change will be called when the Replicant loads too, so we can use it to set the initial value.
+	nameReplicant8.on('change', (newValue, oldValue) => {
+		document.getElementById("message8").className = headstr.concat(newValue);
+	});
+
+	const nameReplicant9 = nodecg.Replicant('char2');
+	// Change will be called when the Replicant loads too, so we can use it to set the initial value.
+	nameReplicant9.on('change', (newValue, oldValue) => {
+		document.getElementById("message9").className = headstr.concat(newValue);
+	});
+
+	
+	const nameReplicant10 = nodecg.Replicant('port1');
+	var portstr = "Port ";
+	// Change will be called when the Replicant loads too, so we can use it to set the initial value.
+	nameReplicant10.on('change', (newValue, oldValue) => {
+		message10.innerText = portstr.concat(newValue);
+	});
+
+	const nameReplicant11 = nodecg.Replicant('port2');
+	// Change will be called when the Replicant loads too, so we can use it to set the initial value.
+	nameReplicant11.on('change', (newValue, oldValue) => {
+		message11.innerText = portstr.concat(newValue);
 	});
 </script>
 </html>

@@ -23,9 +23,9 @@
     "dashboardPanels": [
       {
         "name": "players",
-        "title": "Players",
+        "title": "Text Overlay",
         "file": "players.html",
-		"width":4,
+		"width":7,
         "headerColor": "#3E8EDE"
       }
     ],

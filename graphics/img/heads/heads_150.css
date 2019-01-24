@@ -1,0 +1,162 @@
+.head-doc {
+	background: url('heads_150.png') no-repeat -54px -1px;
+	width: 36px;
+	height: 36px;
+}
+
+.head-mario {
+	background: url('heads_150.png') no-repeat -265px -1px;
+	width: 36px;
+	height: 36px;
+}
+
+.head-luigi {
+	background: url('heads_150.png') no-repeat -493px -1px;
+	width: 36px;
+	height: 36px;
+}
+
+.head-bowser {
+	background: url('heads_150.png') no-repeat -681px -1px;
+	width: 36px;
+	height: 36px;
+}
+
+.head-peach {
+	background: url('heads_150.png') no-repeat -84px -57px;
+	width: 36px;
+	height: 36px;
+}
+
+.head-yoshi {
+	background: url('heads_150.png') no-repeat -327px -57px;
+	width: 36px;
+	height: 36px;
+}
+
+.head-dk {
+	background: url('heads_150.png') no-repeat -610px -57px;
+	width: 36px;
+	height: 36px;
+}
+
+.head-cf {
+	background: url('heads_150.png') no-repeat -1px -111px;
+	width: 36px;
+	height: 36px;
+}
+
+.head-ganondorf {
+	background: url('heads_150.png') no-repeat -282px -111px;
+	width: 36px;
+	height: 36px;
+}
+
+.head-falco {
+	background: url('heads_150.png') no-repeat -531px -111px;
+	width: 36px;
+	height: 36px;
+}
+
+.head-fox {
+	background: url('heads_150.png') no-repeat -735px -111px;
+	width: 36px;
+	height: 36px;
+}
+
+.head-ness {
+	background: url('heads_150.png') no-repeat -21px -165px;
+	width: 36px;
+	height: 36px;
+}
+
+.head-ic {
+	background: url('heads_150.png') no-repeat -213px -163px;
+	width: 36px;
+	height: 36px;
+}
+
+.head-samus {
+	background: url('heads_150.png') no-repeat -667px -166px;
+	width: 36px;
+	height: 36px;
+}
+
+.head-zelda {
+	background: url('heads_150.png') no-repeat -93px -219px;
+	width: 36px;
+	height: 36px;
+}
+
+.head-sheik {
+	background: url('heads_150.png') no-repeat -336px -219px;
+	width: 36px;
+	height: 36px;
+}
+
+.head-link {
+	background: url('heads_150.png') no-repeat -579px -219px;
+	width: 36px;
+	height: 36px;
+}
+
+.head-yl {
+	background: url('heads_150.png') no-repeat -33px -273px;
+	width: 36px;
+	height: 36px;
+}
+
+.head-pichu {
+	background: url('heads_150.png') no-repeat -273px -273px;
+	width: 36px;
+	height: 36px;
+}
+
+.head-pikachu {
+	background: url('heads_150.png') no-repeat -465px -273px;
+	width: 36px;
+	height: 36px;
+}
+
+.head-jigglypuff {
+	background: url('heads_150.png') no-repeat -661px -273px;
+	width: 36px;
+	height: 36px;
+}
+
+.head-mewtwo {
+	background: url('heads_150.png') no-repeat -37px -325px;
+	width: 36px;
+	height: 36px;
+}
+
+.head-gw {
+	background: url('heads_150.png') no-repeat -210px -330px;
+	width: 36px;
+	height: 36px;
+}
+
+.head-marth {
+	background: url('heads_150.png') no-repeat -409px -325px;
+	width: 36px;
+	height: 36px;
+}
+
+.head-roy {
+	background: url('heads_150.png') no-repeat -651px -325px;
+	width: 36px;
+	height: 36px;
+}
+
+.head-kirby {
+	background: url('heads_150.png') no-repeat -405px -166px;
+	width: 36px;
+	height: 36px;
+}
+
+.head-none {
+	background: url('heads_150.png') no-repeat 0px 0px;
+	width: 0px;
+	height: 0px;
+	margin: 0px;
+}
