@@ -3,18 +3,21 @@
 <head>
 	<style>
 		@font-face {
-			font-family: boysen;
-			src:url('boysen_font\Webfonts\Boysen.woff');
+			font-family: 'Proto';
+			src: url('Prototype.ttf')format('truetype');
+			font-weight: normal;
+			font-style: normal;
+			
 		}
 			
 		#message1 {
-			font-size: 2em;
-			font-family: boysen;
+			font-size: 28px;
+			font-family:'Proto';
 		}
 		
 		#message2 {
-			font-size: 2em;
-			font-family: boysen;
+			font-size: 28px;
+			font-family: 'Proto';
 		}
 		
 		.container {
@@ -25,14 +28,14 @@
 		
 		.player-left {
 		position: absolute;
-		top: 15px;
-		left: 40px;
+		top: 17px;
+		left: 30px;
 		}
 		
 		.player-right {
 		position: absolute;
-		top:15px;
-		right: 40px;
+		top:17px;
+		left: 1335px;
 		}
 	</style>
 	
@@ -47,8 +50,8 @@
 <body>
 <div class="container">
 	<img src="img/tufts_stream_overlay.png" style="width:100%;">
-	<div class="player-left" id="message1"</div>
-	<div class="player-right" id="message2"</div>
+	<div class="player-left" id="message1" ></div>
+	<div class="player-right" id="message2" ></div>
 </div>
 </body>
 
